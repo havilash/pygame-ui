@@ -6,7 +6,7 @@ class Slider:
         self.vrange = vrange
         self.rect = pygame.Rect(*pos, *size)
         self.value = value if vrange[0] < value < vrange[1] else 0
-        self.circle_x, _ = pos + size[0] / vrange[1] * self.value
+        self.circle_x = pos[0] + size[0] / vrange[1] * self.value
         self.circle_y = self.rect.h / 2 + self.rect.y
         self.circle_radius = self.rect.h * 1.5
 
