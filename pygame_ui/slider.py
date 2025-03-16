@@ -2,13 +2,14 @@ import pygame
 
 
 class Slider:
-    def __init__(self, pos, size, vrange=(0, 1), value=0):
+    def __init__(self, pos, size, vrange=(0, 1), value=0, func=None):
         self.vrange = vrange
         self.rect = pygame.Rect(*pos, *size)
         self.value = value if vrange[0] < value < vrange[1] else 0
         self.circle_x = pos[0] + size[0] / vrange[1] * self.value
         self.circle_y = self.rect.h / 2 + self.rect.y
         self.circle_radius = self.rect.h * 1.5
+        self.func = func
 
     def draw(self, screen):
         pygame.draw.rect(screen, (255, 255, 255), self.rect)
@@ -53,3 +54,8 @@ class Slider:
         else:
             self.circle_x = x
         self.update_value(x)
+
+    def call_back(self, *args, **kwargs):
+        if self.func:
+            self.func(*args, **kwargs)
+        

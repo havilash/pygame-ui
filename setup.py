@@ -33,7 +33,7 @@ class PyTest(TestCommand):
 
 setup(
     name="pygame-ui",
-    version="1.2.3",
+    version="1.3.3",
     author="havilash sivaratnam",
     tests_require=["pytest"],
     install_requires=["pygame"],
