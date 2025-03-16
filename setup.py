@@ -1,11 +1,9 @@
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 import io
-import codecs
 import os
 import sys
 
-import pygame_ui
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -35,7 +33,7 @@ class PyTest(TestCommand):
 
 setup(
     name="pygame-ui",
-    version=pygame_ui.__version__,
+    version="1.2.3",
     author="havilash sivaratnam",
     tests_require=["pytest"],
     install_requires=["pygame"],
